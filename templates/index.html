@@ -1,0 +1,12 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="card" style="width: 10rem;">
+  <img src="{{ weather.icon }}" class="card-img-top">
+  <div class="card-body">
+    <h5 class="card-title">{{ weather.temp }}°</h5>
+    <p class="card-text">{{ weather.city}}: {{ weather.text }}</p>
+    <p class="card-text">Сьогодні рекомендуємо таку піцу: {{ pizza_recom }}</p>
+  </div>
+</div>
+{% endblock content %}
