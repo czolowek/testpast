@@ -10,7 +10,7 @@ load_dotenv()
 API_KEY = os.getenv("WEATHER_API")
 
 
-def get_weather(city: str = "USA"):
+def get_weather(city: str = "Odesa"):
     url = f"http://api.weatherapi.com/v1/current.json?key={API_KEY}&q={city}"
     resp = requests.get(url).json()
 

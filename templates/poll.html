@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block center %}
+<table class="table table-striped table-hover">
+    <thead>
+        <tr>
+            <td>№</td>
+            <td>Назва піци</td>
+            <td></td>
+        </tr>
+    </thead>
+    <tbody>
+        <form action="{{ url_for('add_vote') }}">
+            {% for pizza in pizzas %}
+                <tr>
+                    <td>{{ loop.index }}</td>
+                    <td>
+                        <label class="form-check-label">{{ pizza.name }}</label>
+                    </td>
+                    <td>
+                        <input type="radio" name="vote" class="form-check-input" value="{{ pizza.name }}">
+                    </td>
+                </tr>
+            {% endfor %}
+            <tr><td><button type="submit" class="btn btn-primary">Проголосувати</button></tr></td>
+        </form>
+    </tbody>
+</table>
+{% endblock center %}
